@@ -3,10 +3,14 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { InfoBoxComponent } from './info-box/info-box.component';
+import { MouseCursorComponent } from './mouse-cursor/mouse-cursor.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    InfoBoxComponent,
+    MouseCursorComponent
   ],
   imports: [
     BrowserModule,

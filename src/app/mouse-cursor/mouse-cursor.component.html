@@ -1,7 +1,7 @@
 <p>mouse-cursor works!</p>
 
-<div (mousemove)="updateCoords($event)" class="box"></div>
+<div (mousemove)="updateCoords($event)" (click)="fixCoords()" class="box"></div>
 
 <p>
-    x ist {{ coords.x }}, y ist {{ coords.y }}
+    x ist {{ coords?.x }}, y ist {{ coords?.y }}
 </p>

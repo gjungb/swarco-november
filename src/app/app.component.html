@@ -1,5 +1,7 @@
 <h1 >Willkomen bei {{ title }}</h1>
 
-<sts-info-box></sts-info-box>
+<sts-book-list></sts-book-list>
 
-<sts-mouse-cursor></sts-mouse-cursor>
+<sts-info-box #info></sts-info-box>
+
+<sts-mouse-cursor (coordsChange)="handleCoords($event)" [stsCoords]="intial"></sts-mouse-cursor>

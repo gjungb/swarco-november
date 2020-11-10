@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 /**
  * Koordinaten
@@ -17,14 +17,20 @@ export type Coords = {
   styleUrls: ['./mouse-cursor.component.css'],
 })
 export class MouseCursorComponent implements OnInit {
-  coords: Coords = {
-    x: 0,
-    y: 0,
-  };
+  // tslint:disable-next-line: no-input-rename
+  @Input('stsCoords')
+  coords: Coords;
+
+  @Output()
+  coordsChange = new EventEmitter<Coords>();
 
   constructor() {}
 
   ngOnInit(): void {}
+
+  fixCoords(): void {
+    this.coordsChange.emit(this.coords);
+  }
 
   updateCoords({ offsetX: x, offsetY: y }: MouseEvent): void {
     this.coords = {

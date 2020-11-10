@@ -1,5 +1,19 @@
 <p>info-box works!</p>
 
+<p [ngClass]="{foo: true, bar: isHidden}">
+    Hier steht auch Text.
+</p>
+
+<ng-template [ngIf]="!isHidden">
+    <p>
+        Hier mit ngIf
+    </p>
+</ng-template>
+
+<p *ngIf="!isHidden">
+    Hier mit *ngIf
+</p>
+
 <!-- Property binding -->
 <p [hidden]="isHidden">
     Hier steht Text.

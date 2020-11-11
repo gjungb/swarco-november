@@ -18,6 +18,8 @@ export class AppComponent {
     y: 32
   };
 
+  isVisible = true;
+
   handleCoords(value: Coords): void {
     console.log(value);
     this.box.toggle();

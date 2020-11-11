@@ -1,6 +1,8 @@
 <h1 >Willkomen bei {{ title }}</h1>
 
-<sts-book-list></sts-book-list>
+<button (click)="isVisible = !isVisible">Toggle</button>
+
+<sts-book-list *ngIf="isVisible"></sts-book-list>
 
 <sts-info-box #info></sts-info-box>
 

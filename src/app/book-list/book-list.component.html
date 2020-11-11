@@ -1,9 +1,17 @@
 <p>book-list works!</p>
 
+<h1>
+    {{ ticker$ | async }}
+</h1>
+
 <ol>
-    <li *ngFor="let book of books">
-        {{ book.title }}
+    <li *ngFor="let book of books$ | async">
+        {{ book.title | uppercase }}
         <br>
-        {{ book.subtitle }}
+        {{ book.subtitle | slice:0:max }}
     </li>
 </ol>
+
+<h1>
+    {{ ticker$ | async }}
+</h1>

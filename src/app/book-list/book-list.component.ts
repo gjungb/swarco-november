@@ -3,11 +3,18 @@ import { interval, Observable, Subscription } from 'rxjs';
 import { tap } from 'rxjs/operators';
 import { Books } from '../model/book';
 import { BookDataService } from '../shared/book-data.service';
+import { BookStubService } from '../stubs/book-stub.service';
 
 @Component({
   selector: 'sts-book-list',
   templateUrl: './book-list.component.html',
   styleUrls: ['./book-list.component.css'],
+  providers: [
+    {
+      provide: BookDataService,
+      useClass: BookStubService
+    }
+  ]
 })
 export class BookListComponent implements OnInit, OnDestroy {
   // books: Books;

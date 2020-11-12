@@ -1,9 +1,15 @@
-<h1 >Willkomen bei {{ title }}</h1>
+<h1>Willkomen bei {{ title }}</h1>
 
-<button (click)="isVisible = !isVisible">Toggle</button>
+<router-outlet></router-outlet>
 
-<sts-book-list *ngIf="isVisible"></sts-book-list>
+<ng-container *ngIf="false">
+    <sts-book-edit></sts-book-edit>
 
-<sts-info-box #info></sts-info-box>
+    <button (click)="isVisible = !isVisible">Toggle</button>
 
-<sts-mouse-cursor (coordsChange)="handleCoords($event)" [stsCoords]="intial"></sts-mouse-cursor>
+    <sts-book-list *ngIf="isVisible"></sts-book-list>
+
+    <sts-info-box #info></sts-info-box>
+
+    <sts-mouse-cursor (coordsChange)="handleCoords($event)" [stsCoords]="intial"></sts-mouse-cursor>
+</ng-container>

@@ -6,6 +6,10 @@
 
 <ol>
     <li *ngFor="let book of books$ | async">
+        <a [routerLink]="book.isbn">
+            {{ book.isbn }}
+        </a>
+        <br>
         {{ book.title | uppercase }}
         <br>
         {{ book.subtitle | slice:0:max }}

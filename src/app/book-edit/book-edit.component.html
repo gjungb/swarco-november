@@ -1,0 +1,24 @@
+<p>book-edit works!</p>
+
+<!-- Reactive -->
+<form [formGroup]="form">
+    <input type="text" [formControlName]="'title'">
+    <p *ngIf="form.get('title').hasError('required')">
+        Bitte ausfüllen!
+    </p>
+</form>
+
+<!-- Template driven -->
+<form #myForm="ngForm" (ngSubmit)="updateBook(myForm.value)">
+    <input type="text" [(ngModel)]="book.title" #myTitle="ngModel" [ngModelOptions]="{updateOn: 'change'}" name="title" required
+        minlength="3">
+    <p *ngIf="myTitle.hasError('required')">
+        Bitte ausfüllen!
+    </p>
+
+    <button type="submit" [disabled]="myForm.invalid">
+        Abschicken
+    </button>
+
+    <pre><code>{{ book | json }}</code></pre>
+</form>
